@@ -7,12 +7,13 @@ import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
+    MaterialModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
