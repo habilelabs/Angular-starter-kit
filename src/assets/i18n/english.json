@@ -1,3 +1,15 @@
 {
-    "ANGULAR_MATERIAL" : "Angular Material PRAMOD"
+    "ANGULAR_MATERIAL" : "Angular Material",
+    "FIRST_NAME":"First Name",
+    "FIRST_NAME_REQUIRED":"First_Name_Required",
+    "FIRST_NAME_VALID":"First Name Valid",
+    "LAST_NAME":"Last Name",
+    "LAST_NAME_REQUIRED":"Lasr Name Required",
+    "LAST_NAME_VALID":"Last Name Valid",
+    "EMAIL_ADDRESS":"Email Address",
+    "EMAIL_IS_REQUIRED":"Email is required",
+    "MUST_INCLUDE_VALID_EMAIL":"Must include valid email",
+    "CREATE_ACCOUNT":"Create Account",
+    "SIGNUP_PAGE": "Signup Page"
+
 }
