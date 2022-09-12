@@ -7,9 +7,13 @@
     "LAST_NAME_REQUIRED":"Lasr Name Required",
     "LAST_NAME_VALID":"Last Name Valid",
     "EMAIL_ADDRESS":"Email Address",
-    "EMAIL_IS_REQUIRED":"Email is required",
+    "EMAIL_ADDRESS_REQUIRED":"Email Address is required",
     "MUST_INCLUDE_VALID_EMAIL":"Must include valid email",
     "CREATE_ACCOUNT":"Create Account",
-    "SIGNUP_PAGE": "Signup Page"
-
+    "SIGNUP_PAGE": "Signup Page",
+    "PASSWORD":"Password",
+    "PASSWORD_HINT": "Password Hint",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "CONFIRM_PASSWORD_REQUIRED": "Confirm password is required",
+    "PASSWORD_MISMATCH": "Passwords do not match"
 }

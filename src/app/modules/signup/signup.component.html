@@ -1,7 +1,101 @@
 <div>
   <p>{{'SIGNUP_PAGE' | translate}}</p>
-</div>
-<div class="auth-form-content sign-up-content">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off" role="form">
+    <mat-form-field fxFlex="100">
+      <mat-label>{{'FIRST_NAME'| translate}}</mat-label>
+      <input type="text" formControlName="firstName" matInput minlength="4" maxlength="20" id="firstName">
+      <mat-error *ngIf="form.controls.firstName.touched && form.controls.firstName.hasError('required')">
+        {{ 'FIRST_NAME_REQUIRED' | translate }}
+      </mat-error>
+      <mat-error *ngIf="form.controls.firstName.hasError('blankString')">
+        {{ 'FIRST_NAME_VALID' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{'LAST_NAME'| translate}}</mat-label>
+      <input type="text" formControlName="lastName" matInput minlength="4" maxlength="20" id="lastName">
+      <mat-error *ngIf="form.controls.lastName.touched && form.controls.lastName.hasError('required')">
+        {{ 'LAST_NAME_REQUIRED' | translate }}
+      </mat-error>
+      <mat-error *ngIf="form.controls.lastName.hasError('blankString')">
+        {{ 'LAST_NAME_VALID' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{'EMAIL_ADDRESS'| translate}}</mat-label>
+      <input type="email" formControlName="email" matInput id="email">
+      <mat-error *ngIf="form.controls.email.touched && form.controls.email.hasError('required')">
+        {{ 'EMAIL_ADDRESS_REQUIRED' | translate }}
+      </mat-error>
+      <mat-error *ngIf="form.controls.email.hasError('invalidEmail')">
+        {{ 'MUST_INCLUDE_VALID_EMAIL' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <div
+        fxLayout="row"
+        fxLayout.xs="column"
+        fxLayoutAlign.xs="space-between"
+        fxLayoutAlign="start"
+        fxLayoutGap="0px"
+        fxLayoutGap.gt-md="16px grid"
+        fxLayoutGap.lt-sm="0px"
+      >
+        <mat-form-field fxFlex="50" appearance="fill">
+          <mat-label> {{ 'PASSWORD' | translate }} </mat-label>
+          <input
+            id="password"
+            matInput
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            (input)="onPasswordInput()"
+          />
+          <!-- <mat-icon
+            svgIcon="info-stroke-icon"
+            class="pas-hint-icon"
+            matTooltip="{{ 'PASSWORD_HINT' | translate }}"
+          ></mat-icon> -->
+          <!-- <mat-icon
+            (click)="showPassword = !showPassword"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="showPassword"
+            svgIcon="{{ !showPassword ? 'invisible' : 'visibility' }}"
+            matSuffix
+          ></mat-icon> -->
+        </mat-form-field>
+
+        <mat-form-field fxFlex="50" appearance="fill">
+          <mat-label>{{ 'CONFIRM_PASSWORD' | translate }}</mat-label>
+          <input
+            id="confirm_password"
+            matInput
+            formControlName="confirmPassword"
+            [type]="showPasswordConfirm ? 'text' : 'password'"
+            (input)="onPasswordInput()"
+          />
+          <!-- <mat-icon
+            (click)="showPasswordConfirm = !showPasswordConfirm"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="showPasswordConfirm"
+            svgIcon="{{ !showPasswordConfirm ? 'invisible' : 'visibility' }}"
+            matSuffix
+          ></mat-icon> -->
+          <mat-error *ngIf="form.controls.confirmPassword.hasError('required')">
+            {{ 'CONFIRM_PASSWORD_REQUIRED' | translate }}
+          </mat-error>
+          <mat-error *ngIf="form.hasError('mismatchedPasswords')">
+            {{ 'PASSWORD_MISMATCH' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    <div>
+      <button
+        mat-flat-button
+        type="button"
+        color="warn"
+        (click)="onSubmit()"
+      >
+        {{ 'CREATE_ACCOUNT' | translate }}
+      </button>
+    </div>
   </form>
 </div>
