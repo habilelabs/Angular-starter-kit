@@ -49,18 +49,6 @@
             formControlName="password"
             (input)="onPasswordInput()"
           />
-          <!-- <mat-icon
-            svgIcon="info-stroke-icon"
-            class="pas-hint-icon"
-            matTooltip="{{ 'PASSWORD_HINT' | translate }}"
-          ></mat-icon> -->
-          <!-- <mat-icon
-            (click)="showPassword = !showPassword"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="showPassword"
-            svgIcon="{{ !showPassword ? 'invisible' : 'visibility' }}"
-            matSuffix
-          ></mat-icon> -->
         </mat-form-field>
 
         <mat-form-field fxFlex="50" appearance="fill">
@@ -72,13 +60,6 @@
             [type]="showPasswordConfirm ? 'text' : 'password'"
             (input)="onPasswordInput()"
           />
-          <!-- <mat-icon
-            (click)="showPasswordConfirm = !showPasswordConfirm"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="showPasswordConfirm"
-            svgIcon="{{ !showPasswordConfirm ? 'invisible' : 'visibility' }}"
-            matSuffix
-          ></mat-icon> -->
           <mat-error *ngIf="form.controls.confirmPassword.hasError('required')">
             {{ 'CONFIRM_PASSWORD_REQUIRED' | translate }}
           </mat-error>
