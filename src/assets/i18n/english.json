@@ -15,5 +15,11 @@
     "PASSWORD_HINT": "Password Hint",
     "CONFIRM_PASSWORD": "Confirm Password",
     "CONFIRM_PASSWORD_REQUIRED": "Confirm password is required",
-    "PASSWORD_MISMATCH": "Passwords do not match"
+    "PASSWORD_MISMATCH": "Passwords do not match",
+    "SIGNIN_PAGE": "Signin Page",
+    "LOGIN":"Login",
+    "EMAIL_IS_REQUIRED":"Email is required",
+    "EMAIL_ADDRESS_IS_NOT_VALID":"Email address is not valid",
+    "PASSWORD_REQUIRED": "Password required"
+
 }
