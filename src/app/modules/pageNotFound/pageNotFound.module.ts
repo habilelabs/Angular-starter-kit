@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { ErrorRoutingModule } from './error-routing.module';
-import { ErrorComponent } from './error.component';
+import { PageNotFoundRoutingModule } from './pageNotFound-routing.module';
+import { PageNotFoundComponent } from './pageNotFound.component';
 
 
 @NgModule({
   declarations: [
-    ErrorComponent
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,
-    ErrorRoutingModule,
+    PageNotFoundRoutingModule,
     MatGridListModule
   ]
 })
-export class ErrorModule { }
+export class PageNotFoundModule { }
