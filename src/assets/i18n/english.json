@@ -1,3 +1,25 @@
 {
-    "ANGULAR_MATERIAL" : "Angular Material PRAMOD"
+    "ANGULAR_MATERIAL" : "Angular Material",
+    "FIRST_NAME":"First Name",
+    "FIRST_NAME_REQUIRED":"First_Name_Required",
+    "FIRST_NAME_VALID":"First Name Valid",
+    "LAST_NAME":"Last Name",
+    "LAST_NAME_REQUIRED":"Lasr Name Required",
+    "LAST_NAME_VALID":"Last Name Valid",
+    "EMAIL_ADDRESS":"Email Address",
+    "EMAIL_ADDRESS_REQUIRED":"Email Address is required",
+    "MUST_INCLUDE_VALID_EMAIL":"Must include valid email",
+    "CREATE_ACCOUNT":"Create Account",
+    "SIGNUP_PAGE": "Signup Page",
+    "PASSWORD":"Password",
+    "PASSWORD_HINT": "Password Hint",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "CONFIRM_PASSWORD_REQUIRED": "Confirm password is required",
+    "PASSWORD_MISMATCH": "Passwords do not match",
+    "SIGNIN_PAGE": "Signin Page",
+    "LOGIN":"Login",
+    "EMAIL_IS_REQUIRED":"Email is required",
+    "EMAIL_ADDRESS_IS_NOT_VALID":"Email address is not valid",
+    "PASSWORD_REQUIRED": "Password required"
+
 }
