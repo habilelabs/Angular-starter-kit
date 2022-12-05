@@ -8,9 +8,9 @@ const routes: Routes = [
   { path: 'signup', loadChildren: () => import('./modules/signup/signup.module').then(m => m.SignupModule), canActivate: [AuthGuard] },
   { path: 'error', loadChildren: () => import('./modules/error/error.module').then(m => m.ErrorModule), canActivate: [AuthGuard] },
   { path: 'about', loadChildren: () => import('./modules/about/about.module').then(m => m.AboutModule), canActivate: [AuthGuard]},
+  { path: 'login', loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule), canActivate: [AuthGuard]},
   { path: '**', loadChildren: () => import('./modules/error/error.module').then(m => m.ErrorModule), canActivate: [AuthGuard] },
-
-
+ 
 ];
 
 @NgModule({

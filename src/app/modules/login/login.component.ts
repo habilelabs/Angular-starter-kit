@@ -1,27 +1,26 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { emailValidator, isBlankString, matchingPasswords } from '../../../assets/validators/common-validators';
-
+import { emailValidator, matchingPasswords } from '../../../assets/validators/common-validators';
 @Component({
-    selector: 'app-signup',
-    templateUrl: './signup.component.html',
-    styleUrls: ['./signup.component.scss'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
 })
-export class SignupComponent implements OnInit, OnDestroy {
+
+export class LoginComponent implements OnInit {
+    loading = false;
+    submitted = false;
+    public  email:  string  =  "";
+    public  password:  string  =  "";
     public form: FormGroup;
-    public showPassword = false;
-    public showPasswordConfirm = false;
-    strength = '';
+    public showPassword: boolean = false;
+    public showPasswordConfirm: boolean = false;
+    public strength:string = '';
     public passwordPattern =
         '^((?=(.*[^A-Za-z0-9]){specialCharacter,})(?=(.*[A-Z]){1,})(?=(.*\\d){1,})(?=.*[a-z]){1,}).{passwordLength,}';
     constructor(
-        private readonly fb: FormBuilder
-    ) {
-        // Nothing
-    }
-
-    public ngOnDestroy() {
-    }
+        private readonly fb: FormBuilder,
+    ) {}
 
     public onPasswordInput() {
         this.checkPasswordFormat();
@@ -47,9 +46,8 @@ export class SignupComponent implements OnInit, OnDestroy {
     }
 
     public onSubmit() {
+      this.showPassword =true;
         const registerUser = {
-            firstName: this.form.value.firstName,
-            lastName: this.form.value.lastName,
             email: this.form.value.email,
             password: this.form.value.password
         };
@@ -58,8 +56,6 @@ export class SignupComponent implements OnInit, OnDestroy {
     public registerFormInit() {
         this.form = this.fb.group(
             {
-                firstName: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$'), isBlankString]],
-                lastName: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$'), isBlankString]],
                 email: ['', Validators.compose([Validators.required, emailValidator])],
                 password: ['', Validators.required],
                 confirmPassword: ['', Validators.required],

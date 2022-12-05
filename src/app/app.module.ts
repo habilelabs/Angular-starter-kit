@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    MatDialogModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
