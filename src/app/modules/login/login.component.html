@@ -1,21 +1,24 @@
 <div class="login-form">
   <img src="././assets/images/login_image.png" width="400" height="400" />
   <div class="login-section">
-    <p>{{ "Login Page" | translate }}</p>
+    <p class="login">{{ "Login Page" | translate }}</p>
     <form
       [formGroup]="form"
       (ngSubmit)="onSubmit()"
       autocomplete="off"
       role="form"
-      novalidate>
-     
+      novalidate
+    >
       <mat-form-field fxFlex="50" appearance="fill">
         <mat-label>{{ "Email" | translate }}</mat-label>
-        <input class="field" type="text" formControlName="email" matInput id="email"/>
-        <mat-error
-          *ngIf="form.controls.email.hasError('required') 
-          "
-        >
+        <input
+          class="field"
+          type="text"
+          formControlName="email"
+          matInput
+          id="email"
+        />
+        <mat-error *ngIf="form.controls.email.hasError('required')">
           {{ "EMAIL_ADDRESS_REQUIRED" | translate }}</mat-error
         >
         <mat-error *ngIf="form.controls.email.hasError('invalidEmail')">
@@ -26,22 +29,27 @@
       <mat-form-field>
         <mat-label>{{ "Password" | translate }}</mat-label>
         <input
-        class="field"
+          class="field"
           matInput
           id="password"
           [type]="showPassword ? 'text' : 'password'"
           formControlName="password"
           (input)="onPasswordInput()"
         />
-        <mat-error *ngIf="form.controls.password.touched && form.controls.password.hasError('required')">
-          {{ 'PASSWORD_REQUIRED' | translate }}
+        <mat-error
+          *ngIf="
+            form.controls.password.touched &&
+            form.controls.password.hasError('required')
+          "
+        >
+          {{ "PASSWORD_REQUIRED" | translate }}
         </mat-error>
       </mat-form-field>
 
       <mat-form-field fxFlex="50" appearance="fill">
         <mat-label> confirm your password</mat-label>
         <input
-        class="field"
+          class="field"
           id="confirm_password"
           matInput
           formControlName="confirmPassword"
@@ -53,22 +61,18 @@
         </mat-error>
         <mat-error *ngIf="form.hasError('mismatchedPasswords')">
           {{ "PASSWORD_MISMATCH" | translate }}
-          
         </mat-error>
       </mat-form-field>
-      
+
       <div>
         <button
           color="primary"
           type="submit"
           mat-flat-button
           class="button"
-          [disabled]= "!form.valid && form.dirty"
+          [disabled]="!form.valid && form.dirty"
           (click)="onSubmit()"
         >
-        {{!(form.valid && form.dirty)}}
-        {{form.valid}}
-        {{form.dirty}}
           Login
         </button>
       </div>
