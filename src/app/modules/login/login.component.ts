@@ -24,11 +24,6 @@ export class LoginComponent implements OnInit {
 
     public onPasswordInput() {
         this.checkPasswordFormat();
-        if (this.form.hasError('mismatchedPasswords')) {
-            this.form.controls.confirmPassword.setErrors({ mismatchedPasswords: true });
-        } else {
-            this.form.controls.confirmPassword.setErrors(null);
-        }
     }
 
     checkPasswordFormat() {
@@ -58,9 +53,7 @@ export class LoginComponent implements OnInit {
             {
                 email: ['', Validators.compose([Validators.required, emailValidator])],
                 password: ['', Validators.required],
-                confirmPassword: ['', Validators.required],
-            },
-            { validator: matchingPasswords('password', 'confirmPassword') },
+            }
         );
     }
 }
