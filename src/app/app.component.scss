@@ -1,10 +1,52 @@
 header {
     background-color: #2b8b80;
-    height: 50px;
+    height: auto;
     color: white;
+    position: fixed;
+    width: 100vw;
+    top: 0;
     padding: 20px 0 20px 0;
 
+    img {
+        width: 60px;
+        height: auto;
+        cursor: pointer;
+    }
 
+    .nav-panel-left {
+        float: left;
+        margin: 0px 70px;
+        display: flex;
+        flex: 1;
+
+        button {
+            background-color: rgba($color: #000000, $alpha: 0.0);
+            color: white;
+            font-weight: 600;
+            margin: 0px 20px;
+            font-size: 20px;
+        }
+
+        button:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .nav-panel-right {
+        float: right;
+        margin: 10px 70px;
+
+        button {
+            background-color: rgba($color: #000000, $alpha: 0.0);
+            color: white;
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+}
+
+.content {
+    padding-top: 100px;
 }
 
 footer {

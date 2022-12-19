@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <header>
+    <div class="nav-panel-left">
+      <img src="../assets/images/logoHL.png" (click)="goTo('')" />
+      <button mat-button (click)="goTo('')">Dashboard</button>
+      <button mat-button (click)="goTo('about')">About Us</button>
+    </div>
+    <div class="nav-panel-right">
+      <button mat-stroked-button (click)="goTo('login')">Login</button>
+    </div>
   </header>
-  <router-outlet></router-outlet>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
   <footer>
     © Copyright 2022 - Angular welcome kit. All Rights Reserved.
   </footer>
 </body>
+
 </html>
